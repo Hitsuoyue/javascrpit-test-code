@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="a">
+        11111111111111
+        22222222222222
+        333333333333
+        3333333333333333
+    </div>
+    <!--<script>-->
+        <!--//this-->
+        <!--//构造函数执行:this 先赋值为空对象，再给对象添加属性-->
+        <!--function Foo(name) {-->
+            <!--this.name = name;-->
+            <!--console.log('this', this);-->
+        <!--}-->
+        <!--var f = new Foo('li')-->
+
+        <!--//对象-->
+        <!--var obj = {-->
+            <!--name: 'zhao',-->
+            <!--printName: function () {-->
+                <!--console.log(this, this.name)-->
+            <!--}-->
+        <!--};-->
+        <!--obj.printName();-->
+
+        <!--//函数-->
+        <!--function fn() {-->
+            <!--console.log(this)   // this===window-->
+        <!--}-->
+        <!--fn();-->
+
+        <!--// call apply 立即调用-->
+        <!--function fn1(name, age) {-->
+            <!--console.log(this, name, age);-->
+        <!--}-->
+        <!--fn1.call({x:100}, 'wang', 20)   //{x: 100} "wang" 20-->
+        <!--fn1.apply({x:200}, ['wang', 20])    //{x: 200} "wang" 20-->
+
+        <!--// bind   暂不调用，便于后面调用-->
+        <!--var fn2 = function (name, age) {-->
+            <!--console.log(this, name, age)-->
+        <!--}.bind({x: 300})-->
+        <!--fn2('a', 'b');  //{x: 300} "a" "b"-->
+    <!--</script>-->
+<script src="index.js"></script>
+</body>
+</html>

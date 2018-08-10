@@ -1,0 +1,9 @@
+.number{
+    margin: 10px;
+    border: 1px solid #6dff6a;
+    font-size: 18px;
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+}
