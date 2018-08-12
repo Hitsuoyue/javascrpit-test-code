@@ -12,6 +12,51 @@
         333333333333
         3333333333333333
     </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="array.js"></script>
+    <!--<script src="yibu.js"></script>-->
+    <script>
+        // for(let i=0;i<10;i++){
+        //     let a = document.createElement('a');
+        //     a.innerHTML = i+'<br>';
+        //     a.addEventListener('click', function(e){
+        //         e.preventDefault();
+        //         alert(i)
+        //     })
+        //     document.body.appendChild(a)
+        // }
+        // for(var i=0;i<10;i++){
+        //     (function (i){
+        //         let a = document.createElement('a');
+        //         a.innerHTML = i+'<br>';
+        //         a.addEventListener('click', function(e){
+        //             e.preventDefault();
+        //             alert(i)
+        //         })
+        //         document.body.appendChild(a)
+        //     })(i)
+        // }
+    </script>
+
+    <!-- 实际开发中闭包的应用 -->
+    <script>
+        // function isFirstLoad(){
+        //     var _list = [];
+        //     return function (id){
+        //         if(_list.indexOf(id) >= 0){
+        //             return false;
+        //         }else{
+        //             _list.push(id);
+        //             return true;
+        //         }
+        //     }
+        // }
+        // //使用
+        // var firstLoad = isFirstLoad()
+        // console.log(firstLoad(10))   //true
+        // console.log(firstLoad(10))  //false
+        // console.log(firstLoad(20))   //true
+    </script>
     <!--<script>-->
         <!--//this-->
         <!--//构造函数执行:this 先赋值为空对象，再给对象添加属性-->
@@ -49,6 +94,51 @@
         <!--}.bind({x: 300})-->
         <!--fn2('a', 'b');  //{x: 300} "a" "b"-->
     <!--</script>-->
+
+
+
+    <!--作用域 -->
+    <!--<script>-->
+        <!--var a = 100;-->
+        <!--function f1(){-->
+            <!--var b = 200;-->
+            <!--function f2(){-->
+                <!--var c = 300;-->
+                <!--console.log(a);-->
+                <!--console.log(b);-->
+                <!--console.log(c);-->
+            <!--}-->
+            <!--f2()-->
+        <!--}-->
+        <!--f1()-->
+    <!--</script>-->
+
+    <!--闭包 -->
+    <script>
+        //函数作为返回值
+        // function F1(){
+        //     var a = 10;
+        //     return function () {
+        //         console.log(a); //自由变量，父作用域寻找
+        //     }
+        // }
+        // var f1 = F1()
+        // var a = 200
+        // f1()
+        //函数作为参数传递
+        // function F1(){
+        //     var a = 100;
+        //     return function () {
+        //         console.log(a); //自由变量，父作用域寻找
+        //     }
+        // }
+        // var f1 = F1()
+        // function F2(fn){
+        //     var a = 200;
+        //     fn()
+        // }
+        // F2(f1)
+    </script>
 <script src="index.js"></script>
 </body>
 </html>
