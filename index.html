@@ -4,14 +4,76 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        .float{
+            float: left;
+        }
+        .block{
+            width:200px;
+            height: 300px;
+            border: 1px solid #cc5f25;
+            background-color: #ccc;
+            /*display: flex;*/
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*bottom: 0;*/
+            /*left: 0;*/
+            /*right: 0;*/
+            /*margin: auto;*/
+            /*display: table;*/
+            /*text-align: center;*/
+        }
+        .child{
+            width:60px;
+            height: 60px;
+            border: 1px solid #cc1c1b;
+            display: table-cell;
+            vertical-align: center;
+        }
+        #a:after{
+            content: "020";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
-    <div id="a">
-        11111111111111
-        22222222222222
-        333333333333
-        3333333333333333
+    <!--<div id="a">-->
+        <!--<div class="float block"></div>-->
+        <!--&lt;!&ndash;<div style="clear: both"></div>&ndash;&gt;-->
+        <!--<p>321321</p>-->
+    <!--</div>-->
+    <!--<div class="block">-->
+        <!--<div class="child"></div>-->
+        <!--<div class="child"></div>-->
+        <!--<div class="child"></div>-->
+        <!--<div class="child"></div>-->
+    <!--</div>-->
+    <div class="block">
+        div1
+        <div class="block" style="height: 240px">
+            div2
+            <div class="block" style="height: 180px">
+                div4
+                <div class="block" style="height: 120px">
+                    div5
+                    <div class="block" style="height: 60px">div6</div>
+                </div>
+            </div>
+        </div>
     </div>
+    <iframe width="500px" height="500px" src="https://www.baidu.com" frameborder="0"></iframe>
+    <script>
+        let ele = document.getElementsByTagName('iframe')[0];
+        console.log('ele', ele);
+        console.log('window', window.frames);
+        let windowFrame = ele.contentWindow;
+        console.log('window', windowFrame);
+        console.log('window', windowFrame.parent, windowFrame.top);
+
+    </script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <!--<script src="array.js"></script>-->
     <script src="js-web-api.js"></script>
