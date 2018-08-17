@@ -45,38 +45,50 @@
         <!--&lt;!&ndash;<div style="clear: both"></div>&ndash;&gt;-->
         <!--<p>321321</p>-->
     <!--</div>-->
+
+    <!--盒模型-->
     <!--<div class="block">-->
         <!--<div class="child"></div>-->
         <!--<div class="child"></div>-->
         <!--<div class="child"></div>-->
         <!--<div class="child"></div>-->
     <!--</div>-->
-    <div class="block">
-        div1
-        <div class="block" style="height: 240px">
-            div2
-            <div class="block" style="height: 180px">
-                div4
-                <div class="block" style="height: 120px">
-                    div5
-                    <div class="block" style="height: 60px">div6</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <iframe width="500px" height="500px" src="https://www.baidu.com" frameborder="0"></iframe>
-    <script>
-        let ele = document.getElementsByTagName('iframe')[0];
-        console.log('ele', ele);
-        console.log('window', window.frames);
-        let windowFrame = ele.contentWindow;
-        console.log('window', windowFrame);
-        console.log('window', windowFrame.parent, windowFrame.top);
 
-    </script>
+    <!--px em rem 测试 -->
+    <!--<div class="block">-->
+        <!--div1-->
+        <!--<div class="block" style="height: 240px">-->
+            <!--div2-->
+            <!--<div class="block" style="height: 180px">-->
+                <!--div4-->
+                <!--<div class="block" style="height: 120px">-->
+                    <!--div5-->
+                    <!--<div class="block" style="height: 60px">div6</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--iframe-->
+    <!--<iframe width="500px" height="500px" src="https://www.baidu.com" frameborder="0"></iframe>-->
+    <!--<script>-->
+        <!--let ele = document.getElementsByTagName('iframe')[0];-->
+        <!--console.log('ele', ele);-->
+        <!--console.log('window', window.frames);-->
+        <!--let windowFrame = ele.contentWindow;-->
+        <!--console.log('window', windowFrame);-->
+        <!--console.log('window', windowFrame.parent, windowFrame.top);-->
+
+    <!--</script>-->
+
+    <!--跨域-->
+    <button id="ajax"></button>
+
+    <script src="ajax.js"></script>
+
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <!--<script src="array.js"></script>-->
-    <script src="js-web-api.js"></script>
+    <!--<script src="js-web-api.js"></script>-->
     <!--<script src="yibu.js"></script>-->
     <script>
         // for(let i=0;i<10;i++){
