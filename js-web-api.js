@@ -20,3 +20,13 @@ console.log(m)
 m.forEach((value,key)=>{
     console.log( value, key);
 })
+
+//通用事件绑定
+function bindEvent(elem, type, fn){
+    elem.addEventListener(type, fn);
+}
+let a = document.getElementsByClassName('a');
+bindEvent(a, 'click', function(e){
+        e.preventDefault()//阻止默认行为
+    alert('click')
+})

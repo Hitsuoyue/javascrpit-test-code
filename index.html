@@ -85,17 +85,92 @@
 
     <!--</script>-->
 
-    <a href="" class="aa">123</a><a class="aa" href="">123</a>
+    <!--<a href="" class="aa">123</a><a class="aa" href="">123</a>-->
 
     <!--跨域-->
-    <button id="ajax"></button>
+    <!--<button id="ajax"></button>-->
 
-    <script src="ajax.js"></script>
+    <!--<script src="ajax.js"></script>-->
 
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
     <!--<script src="array.js"></script>-->
     <!--<script src="js-web-api.js"></script>-->
     <!--<script src="yibu.js"></script>-->
+
+    <!--property & attribute-->
+    <!--<div class="proper" data-name="data-div" style="width: 100px; height: 100px; background-color: aquamarine"></div>-->
+    <!--<script>-->
+        <!--let properEle = document.getElementsByClassName('proper')[0];-->
+        <!--properEle.style.width = '200px';-->
+        <!--// properEle.data-name = true;-->
+        <!--console.log(properEle.data-name);-->
+        <!--console.log(properEle.getAttribute('style'));-->
+        <!--console.log(properEle.getAttribute('data-name'));-->
+    <!--</script>-->
+
+    <!--事件冒泡-->
+    <!--<div id="div1">-->
+        <!--<p id="p1">显示</p>-->
+        <!--<p id="p2">隐藏</p>-->
+    <!--</div>-->
+    <!--<div style="width:300px;height: 300px;background-color: #6dff6a" id="block"></div>-->
+    <!--<script>-->
+        <!--function bindEvent(elem, type, fn){-->
+            <!--elem.addEventListener(type, fn);-->
+        <!--}-->
+        <!--let block = document.getElementById('block');-->
+        <!--let p1 = document.getElementById('p1')-->
+        <!--bindEvent(p1, 'click', function(e){-->
+            <!--e.stopPropagation() //阻止事件冒泡-->
+            <!--block.style.display = 'block'-->
+        <!--})-->
+
+        <!--let div1 = document.getElementById('div1');-->
+        <!--bindEvent(div1, 'click', function(e){-->
+            <!--block.style.display = 'none'-->
+        <!--})-->
+
+        <!--bindEvent(div1, 'click', function(e){-->
+            <!--console.log(e.target.nodeName)-->
+            <!--if(e.target.id === 'p1'){-->
+                <!--block.style.display = 'block'-->
+            <!--}else{-->
+                <!--block.style.display = 'none'-->
+            <!--}-->
+        <!--})-->
+
+
+
+        <!--function bindEvent(elem, type, fn, selector){-->
+            <!--elem.addEventListener(type, function(e){-->
+                <!--if(selector && e.target.matches(selector)){-->
+                    <!--fn.call(e.target, e)-->
+                <!--}else{-->
+                    <!--fn(e)-->
+                <!--}-->
+            <!--})-->
+        <!--}-->
+    <!--</script>-->
+
+    <!--JSONP 实现原理-->
+    <script>
+        window.callback = function(data){
+            console.log(data)//跨域得到的信息
+        }
+    </script>
+    <script src="xxx"></script>
+    //上述 xxx 会返回 callback({x:1,y:2})
+
+
+
+
+
+
+
+
+
+
+
     <script>
         // for(let i=0;i<10;i++){
         //     let a = document.createElement('a');
