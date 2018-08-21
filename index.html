@@ -5,45 +5,136 @@
     <title>Title</title>
     <link rel="stylesheet" href="index.css">
     <style>
-        .float{
-            float: left;
+        html, body{
+            padding: 0;
+            margin: 0;
         }
-        .block{
-            width:200px;
-            height: 300px;
-            border: 1px solid #cc5f25;
-            background-color: #ccc;
+        /*flex*/
+        /*.container{*/
             /*display: flex;*/
-            /*position: absolute;*/
-            /*top: 0;*/
-            /*bottom: 0;*/
-            /*left: 0;*/
-            /*right: 0;*/
-            /*margin: auto;*/
-            /*display: table;*/
-            /*text-align: center;*/
+            /*height: 100vh;*/
+            /*box-sizing: border-box;*/
+        /*}*/
+        /*.container .left{*/
+            /*width: 100px;*/
+            /*height: 100%;*/
+            /*border: 1px solid #6dff6a;*/
+        /*}*/
+        /*.container .center{*/
+            /*flex:1;*/
+            /*height: 100%;*/
+            /*border: 1px solid #ff5d56;*/
+        /*}*/
+        /*.container .right{*/
+            /*width: 100px;*/
+            /*height: 100%;*/
+            /*border: 1px solid #6dff6a;*/
+        /*}*/
+
+
+        /*float*/
+        /*.container{*/
+            /*display: flex;*/
+            /*height: 100vh;*/
+        /*}*/
+        /*.container .block{*/
+            /*height: 100%;*/
+            /*box-sizing: border-box;*/
+        /*}*/
+        /*.container .left{*/
+            /*float: left;*/
+            /*width: 100px;*/
+            /*border: 1px solid #6dff6a;*/
+        /*}*/
+        /*.container .center{*/
+            /*flex:1;*/
+            /*border: 1px solid #ff5d56;*/
+        /*}*/
+        /*.container .right{*/
+            /*float: right;*/
+            /*width: 100px;*/
+            /*border: 1px solid #6dff6a;*/
+        /*}*/
+
+
+
+        /*absolute*/
+        .container{
+            height: 100vh;
         }
-        .child{
-            width:60px;
-            height: 60px;
-            border: 1px solid #cc1c1b;
-            display: table-cell;
-            vertical-align: center;
+        .container .block{
+            height: 100%;
+            box-sizing: border-box;
         }
-        #a:after{
-            content: "020";
-            display: block;
-            height: 0;
-            clear: both;
-            visibility: hidden;
+        .container .left{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            border: 1px solid #6dff6a;
         }
-        .aa{
-            margin: 10px;
-            padding: 10px;
+        .container .center{
+            position: absolute;
+            width: calc(100% - 200px);
+            left: 100px;
+            /*right: 100px;*/
+            border: 1px solid #ff5d56;
+        }
+        .container .right{
+            position: absolute;
+            right: 0;
+            width: 100px;
+            border: 1px solid #6dff6a;
         }
     </style>
+    <script src="service.js"></script>
 </head>
 <body>
+    <!--页面布局-->
+    <div class="container">
+        <div class="left block"></div>
+        <div class="center block"></div>
+        <div class="right block"></div>
+    </div>
+
+    <!--图片懒加载-->
+    <img id="img" src="preview.png" data-realsrc="real.png">
+    <script>
+        let img = document.getElementById('img')
+        img.src = img.getAttribute('data-realsrc')
+    </script>
+
+    <!--合并 DOM 插入-->
+    <script>
+        let listNode = document.getElementById('list')
+
+        //在 list 里面插入 10 个 li 标签
+        let frag = document.createDocumentFragment()
+        let i, li;
+        for(i=0;i<10;i++){
+            li = document.createElement('li')
+            li.innerHTML = `this is li ${i}`
+            frag.appendChild(li)
+        }
+
+        listNode.appendChild(frag)
+
+
+    //    事件节流
+        let textArea = document.getElementById('text')
+        let timeoutId
+        textArea.addEventListener('keyup', function(){
+            if(timeoutId){
+                clearTimeout(timeoutId)
+            }
+            timeoutId = setTimeout(function () {
+                //触发 change 事件
+            }, 100)
+        })
+
+    </script>
+
+
     <!--<div id="a">-->
         <!--<div class="float block"></div>-->
         <!--&lt;!&ndash;<div style="clear: both"></div>&ndash;&gt;-->
@@ -153,16 +244,26 @@
     <!--</script>-->
 
     <!--JSONP 实现原理-->
+    <!--<script>-->
+        <!--window.callback = function(data){-->
+            <!--console.log(data)//跨域得到的信息-->
+        <!--}-->
+    <!--</script>-->
+    <!--<script src="xxx"></script>-->
+    <!--//上述 xxx 会返回 callback({x:1,y:2})-->
+
+
+
+    <!--属性继承-->
+    <!--<div style="text-align: center">-->
+        <!--123-->
+        <!--<p>dsf</p>-->
+
+    <!--</div>-->
+
     <script>
-        window.callback = function(data){
-            console.log(data)//跨域得到的信息
-        }
+
     </script>
-    <script src="xxx"></script>
-    //上述 xxx 会返回 callback({x:1,y:2})
-
-
-
 
 
 
@@ -295,6 +396,8 @@
         // }
         // F2(f1)
     </script>
+
+
 <script src="index.js"></script>
 </body>
 </html>
